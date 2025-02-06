@@ -1,0 +1,49 @@
+# DevOps Tooling Requirements for macOS
+
+## Homebrew (Package Manager)
+Required to install most other dependencies.
+- [Install Homebrew](https://brew.sh)
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+## Core Dependencies
+These tools are required for setting up the DevOps environment.
+```sh
+brew install --cask docker      # Docker for containerization
+brew install kubectl            # Kubernetes CLI
+brew install minikube           # Minikube for local Kubernetes cluster
+brew install kind               # Kind as an alternative to Minikube
+brew install helm               # Helm for managing Kubernetes applications
+brew install argocd             # ArgoCD CLI for GitOps workflows
+brew install gh                 # GitHub CLI for repository and workflow management
+brew install kedacore/tap/keda  # KEDA CLI for event-driven autoscaling
+brew install jq                 # JSON processing tool
+```
+
+## Slack Webhook (Manual Setup Required)
+Slack webhook URLs must be created manually:
+1. Go to [Slack API Webhooks](https://api.slack.com/messaging/webhooks).
+2. Create an **Incoming Webhook**.
+3. Copy the Webhook URL (`https://hooks.slack.com/services/...`).
+4. Store it in an environment variable:
+   ```sh
+   export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/your-webhook-url"
+   ```
+
+## Verification Commands
+After installation, verify the tools with:
+```sh
+docker --version
+kubectl version --client
+minikube version  # or kind version
+helm version
+argocd version --client
+gh --version
+keda version
+jq --version
+```
+
+## Notes
+- Ensure **Homebrew is updated** before running the installations: `brew update`
+- If using an **M1/M2/M3 Mac**, ensure Homebrew is installed under `/opt/homebrew/`.
