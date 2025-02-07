@@ -30,14 +30,16 @@ kubectl get pods -n keda
 
 ```
 
-## Discord Webhook (Manual Setup Required)
-Discord webhook URLs must be created manually:
-1. In Discord Server Settings > Integrations > Webhooks.
-2. Create a **Webhook**.
-3. Copy the Webhook URL (`https://discord.com/api/webhooks/...`).
-4. Store it in an environment variable:
+## Discord Webhook (Free Alternative to Slack Webhooks)
+1. Go to **Discord Server Settings** → **Integrations** → **Webhooks**.
+2. Click **"Create Webhook"**, set a name, and copy the webhook URL.
+3. Store it in an environment variable:
    ```sh
-   export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/your/url
+   export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/YOUR_WEBHOOK_URL"
+   ```
+4. Send messages using:
+   ```sh
+   curl -H "Content-Type: application/json" -X POST -d '{"content": "Hello from DevOps!"}' "$DISCORD_WEBHOOK_URL"
    ```
 
 ## Verification Commands
