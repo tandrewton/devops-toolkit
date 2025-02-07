@@ -18,10 +18,8 @@ Using the following key DevOps concepts:
 devops-toolkit/
 │── part-a/
 │   ├── k8s-manifests/
-│   │   ├── github-actions-runner.yaml
-│   │   ├── argo-cd.yaml
 │   │   ├── webhook-app.yaml
-│   │   ├── slack-webhook-secret.yaml
+│   │   ├── discord-webhook-secret.yaml
 │   ├── webhook-app/
 │   │   ├── Dockerfile
 │   │   ├── main.py (or Go/Node API)
