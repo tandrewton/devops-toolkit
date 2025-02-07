@@ -2,7 +2,7 @@
 
 ## Overview
 
-Using following key DevOps concepts:
+Using the following key DevOps concepts:
 
 - **Kubernetes orchestration** (K8s manifests, deployments, scaling)
 - **GitOps & CI/CD** (GitHub Actions, ArgoCD)
