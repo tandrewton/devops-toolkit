@@ -21,6 +21,13 @@ brew install kedacore/tap/keda  # KEDA CLI for event-driven autoscaling
 brew install jq                 # JSON processing tool
 ```
 
+If brew install kedacore/tap/keda doesn't work, start by connecting to a cluster
+```sh
+kubectl cluster-info # should say your cluster is not running
+kind create cluster
+kubectl get nodes # should return one node running
+```
+
 ## Slack Webhook (Manual Setup Required)
 Slack webhook URLs must be created manually:
 1. Go to [Slack API Webhooks](https://api.slack.com/messaging/webhooks).
