@@ -16,9 +16,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Debug Secrets
+      run: echo "GHCR_PAT length: ${#secrets.GHCR_PAT}"
+
     - name: Log in to GHCR
       run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
 
     - name: Build Docker image
       run: docker build -t ghcr.io/${{ github.actor }}/webhook-api:latest part-a/webhook-app/
