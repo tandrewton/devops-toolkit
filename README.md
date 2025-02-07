@@ -18,14 +18,14 @@ Using the following key DevOps concepts:
 devops-toolkit/
 │── part-a/
 │   ├── k8s-manifests/
-│   │   ├── webhook-app.yaml
-│   │   ├── discord-webhook-secret.yaml
+│   │   ├── webhook-app.yaml   # Kubernetes Deployment & Service
+│   │   ├── discord-webhook-secret.yaml  # Secret for Discord Webhook
 │   ├── webhook-app/
-│   │   ├── Dockerfile
-│   │   ├── main.py (or Go/Node API)
-│   │   ├── requirements.txt (if Python)
+│   │   ├── Dockerfile   # Containerization
+│   │   ├── main.py   # Webhook API (Python)
+│   │   ├── requirements.txt   # Dependencies
 │   ├── .github/workflows/
-│   │   ├── build-and-deploy.yaml
+│   │   ├── build-and-deploy.yaml   # CI/CD
 │   ├── README.md
 │
 │── part-b/
