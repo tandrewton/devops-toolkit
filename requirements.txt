@@ -30,14 +30,14 @@ kubectl get pods -n keda
 
 ```
 
-## Slack Webhook (Manual Setup Required)
-Slack webhook URLs must be created manually:
-1. Go to [Slack API Webhooks](https://api.slack.com/messaging/webhooks).
-2. Create an **Incoming Webhook**.
-3. Copy the Webhook URL (`https://hooks.slack.com/services/...`).
+## Discord Webhook (Manual Setup Required)
+Discord webhook URLs must be created manually:
+1. In Discord Server Settings > Integrations > Webhooks.
+2. Create a **Webhook**.
+3. Copy the Webhook URL (`https://discord.com/api/webhooks/...`).
 4. Store it in an environment variable:
    ```sh
-   export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/your-webhook-url"
+   export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/your/url
    ```
 
 ## Verification Commands
