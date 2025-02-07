@@ -74,7 +74,7 @@ Before setting up this project, ensure you have the following installed:
      ```plaintext
      GHCR_USERNAME=<your-github-username>
      GHCR_TOKEN=<your-github-token>
-     SLACK_WEBHOOK_URL=<your-slack-webhook-url>
+     DISCORD_WEBHOOK_URL=<your-slack-webhook-url>
      ```
    - Modify `.github/workflows/build-and-deploy.yaml` with your settings.
 
@@ -106,7 +106,7 @@ Before setting up this project, ensure you have the following installed:
 
 - **Automated CI/CD** using **GitHub Actions** to deploy applications.
 - **GitOps Workflow** with **ArgoCD** for seamless Kubernetes deployments.
-- **Slack Notifications** for webhook events.
+- **Discord Notifications** for webhook events.
 - **Monitoring & Logging** using **Prometheus, OpenTelemetry, and Grafana**.
 - **Event-driven Autoscaling** via **KEDA**.
 
