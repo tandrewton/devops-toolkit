@@ -6,7 +6,7 @@ Using following key DevOps concepts:
 
 - **Kubernetes orchestration** (K8s manifests, deployments, scaling)
 - **GitOps & CI/CD** (GitHub Actions, ArgoCD)
-- **Event-driven automation** (Webhooks, Slack notifications)
+- **Event-driven automation** (Webhooks, Discord notifications)
 - **Monitoring & observability** (Prometheus, OpenTelemetry, Grafana)
 - **Autoscaling** (KEDA-based event-driven scaling)
 
@@ -55,7 +55,7 @@ Before setting up this project, ensure you have the following installed:
 - **ArgoCD CLI** (for GitOps deployments)
 - **GitHub CLI** (for managing GitHub Actions)
 - **KEDA CLI** (for event-driven autoscaling)
-- **Slack Webhook URL** (for notifications)
+- **Discord Webhook URL** (for notifications)
 
 ### Setup Steps
 1. **Clone the repository**
