@@ -17,11 +17,10 @@ brew install kind               # Kind as an alternative to Minikube
 brew install helm               # Helm for managing Kubernetes applications
 brew install argocd             # ArgoCD CLI for GitOps workflows
 brew install gh                 # GitHub CLI for repository and workflow management
-brew install kedacore/tap/keda  # KEDA CLI for event-driven autoscaling
 brew install jq                 # JSON processing tool
 ```
 
-If brew install kedacore/tap/keda doesn't work, start by connecting to a cluster
+To install keda, start by connecting to a cluster
 ```sh
 kubectl cluster-info # should say your cluster is not running
 kind create cluster
@@ -50,7 +49,6 @@ minikube version  # or kind version
 helm version
 argocd version --client
 gh --version
-keda version
 jq --version
 ```
 
