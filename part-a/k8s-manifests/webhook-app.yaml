@@ -5,7 +5,7 @@ metadata:
   labels:
     app: webhook-api
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: webhook-api
@@ -26,6 +26,9 @@ spec:
             secretKeyRef:
               name: discord-webhook
               key: url
+        env:
+        - name: TEST_UPDATE
+          value: "Auto-sync test with ArgoCD"
 ---
 apiVersion: v1
 kind: Service
