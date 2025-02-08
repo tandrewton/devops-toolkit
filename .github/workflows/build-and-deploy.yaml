@@ -16,8 +16,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Debug Secrets
-      run: echo "GHCR_PAT is set"
+    - name: Debug GHCR_PAT
+      run: echo "GHCR_PAT is set" && echo "Length: ${#GHCR_PAT}"
       env:
         GHCR_PAT: ${{ secrets.GHCR_PAT }}
 
