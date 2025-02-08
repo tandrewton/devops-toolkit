@@ -17,7 +17,13 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Debug GHCR_PAT
-      run: echo "GHCR_PAT is set" && echo "Length: ${#GHCR_PAT}"
+      run: |
+        if [[ -z "${GHCR_PAT}" ]]; then
+          echo "❌ GHCR_PAT is empty or not set!"
+        else
+          echo "✅ GHCR_PAT is set"
+          echo "Approximate length: $(echo -n "$GHCR_PAT" | wc -c) characters"
+        fi
       env:
         GHCR_PAT: ${{ secrets.GHCR_PAT }}
 
