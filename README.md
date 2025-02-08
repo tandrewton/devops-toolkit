@@ -2,13 +2,13 @@
 
 ## Overview
 
-Using the following key DevOps concepts:
+- **Git as the Source of Truth:** All Kubernetes configurations are managed via Git, ensuring consistent deployments.
+- **Automated CI/CD Pipeline:** GitHub Actions builds and pushes containerized applications to GitHub Container Registry (GHCR).
+- **GitOps with ArgoCD:** ArgoCD continuously syncs Kubernetes state with the Git repository, ensuring deployments are always up to date and self-healing if they drift.
+- **Event-Driven Autoscaling:** KEDA scales the application dynamically based on webhook traffic.
+- **Comprehensive Monitoring:** Prometheus and Grafana track API performance, errors, and Kubernetes resource usage.
+- **Increased Developer Velocity:** Engineers can deploy by simply pushing code to Git, eliminating manual intervention.
 
-- **Kubernetes orchestration** (K8s manifests, deployments, scaling)
-- **GitOps & CI/CD** (GitHub Actions, ArgoCD)
-- **Event-driven automation** (Webhooks, Discord notifications)
-- **Monitoring & observability** (Prometheus, OpenTelemetry, Grafana)
-- **Autoscaling** (KEDA-based event-driven scaling)
 
 ---
 
@@ -42,6 +42,35 @@ devops-toolkit/
 ```
 
 ---
+## Key Features
+
+### **1️⃣ GitOps with ArgoCD**
+- **Automatic Syncing:** ArgoCD watches GitHub for changes and applies them automatically.
+- **Self-Healing:** If someone manually modifies the cluster, ArgoCD resets it to match Git.
+- **Rollback & History:** Roll back to previous versions in case of failures.
+- **Standardized Deployments:** Ensures all environments (dev, staging, prod) use the same configuration.
+
+### **2️⃣ Fully Automated CI/CD Pipeline**
+- **GitHub Actions triggers on new commits**
+- **Builds Docker images & pushes them to GHCR**
+- **ArgoCD auto-deploys the latest version**
+
+### **3️⃣ Monitoring & Observability**
+- **Prometheus scrapes key performance metrics** from the Webhook API
+- **Grafana visualizes system health and API performance**
+- **Logs & Alerts enable proactive debugging**
+
+### **4️⃣ Event-Driven Autoscaling with KEDA**
+- **Dynamically adjusts the number of running pods** based on webhook traffic
+- **Efficient resource usage** (scales up on high load, scales down when idle)
+
+## How It Works
+
+1️⃣ **Developer pushes code** → GitHub Actions builds & pushes a container to GHCR.  
+2️⃣ **ArgoCD auto-syncs** → It detects the Git change and deploys the update.  
+3️⃣ **Webhook API runs on Kubernetes**, automatically scaling when needed.  
+4️⃣ **Prometheus & Grafana track performance** and visualize API health. 
+
 
 ## Getting Started
 
