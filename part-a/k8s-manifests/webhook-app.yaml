@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webhook-api
-        image: ghcr.io/YOUR_GITHUB_USERNAME/webhook-api:latest
+        image: ghcr.io/tandrewton/webhook-api:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
@@ -29,6 +29,8 @@ spec:
         env:
         - name: TEST_UPDATE
           value: "Auto-sync test with ArgoCD"
+      imagePullSecrets:
+      - name: ghcr-secret
 ---
 apiVersion: v1
 kind: Service
